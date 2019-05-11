@@ -8,8 +8,12 @@
   <body>
 	  <h2>Test Connection</h2>
       <div id="app">
-        <div v-for="train in train">
-            <p>{{train}} </p>
+		<h2>Platform 1</h2>
+        <div v-for="train in train.slice(0,5)">
+            <p>{{train.Route}}</p>
+		    <p>{{train.DepartureText}}</p>
+			<p>{{train.RouteDirection}}</p>
+			<p>{{train.Description}}</p>
         </div>
       </div>
     <script src="vendors/axios.js"></script>

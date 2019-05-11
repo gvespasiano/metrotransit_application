@@ -1,13 +1,12 @@
-var baseURL = "http://svc.metrotransit.org";
+var baseURL = "https://svc.metrotransit.org";
 var vm = new Vue({
     el: "#app",
     data: {
-        train: []
+        train: [],
     },
     methods: {
         getTrain: function() {
-            axios.get(baseURL + "/NexTrip/1000,0,1").then(function(response){
-                console.log(response);
+            axios.get(baseURL + "/NexTrip/56335").then(function(response){
                 vm.train = response.data;
             })
         }
@@ -16,3 +15,4 @@ var vm = new Vue({
         this.getTrain();
     }
 });
+
