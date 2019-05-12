@@ -3,86 +3,91 @@
 <html>
   <head>
 	<meta charset="utf-8">
-
+	<link href="style.css" rel="stylesheet" type="text/css" />
     <title>Metro Transit</title>
   </head>
-
   <body>
-	 
-	  <div id="app">
 		  <div id="header">
 		   <h1>Train Transportaton from Target Field</h1>
 	      </div>
+		  <div class="filters">
+			  <h3>Select Your Side of the Field:</h3>
+			  <button id="east">West Side</button>
+			  <button id="west">East Side</button>
+		  </div>	 
+	<div id="app">
+	<div id="eastDiv">
 		  <div class="table-title">
-		  	<h3>Gate E - Platform 1</h3>
+		  	<h3>East Side - Platform 1</h3>
 		  </div>
 		 <div id="East1">
-		  <table class="table-fill">
+		  <table class="table-main">
 		  <thead>
 		  	<tr>
-		  	  <th class="text-left">Line</th>
-		  	  <th class="text-left">Departure</th>
-			  <th class="text-left">Direction</th>
-			  <th class="text-left">Destination</th>
+		  	  <th class="entry">Line</th>
+		  	  <th class="entry">Departure</th>
+			  <th class="entry">Direction</th>
+			  <th class="entry">Destination</th>
 		  	</tr>
 		  </thead>
-		  <tbody class="table-hover">
+		  <tbody>
 			  <tr v-for="eP1 in eP1.slice(0,5)">	
-			  <td class="text-left">{{eP1.Route}}</td>
-			  <td class="text-left">{{eP1.DepartureText}}</td>
-			  <td class="text-left">{{eP1.RouteDirection}}</td>
-			  <td class="text-left">{{eP1.Description}}</td>
+			  <td class="entry">{{eP1.Route}}</td>
+			  <td class="entry">{{eP1.DepartureText}}</td>
+			  <td class="entry">{{eP1.RouteDirection}}</td>
+			  <td class="entry">{{eP1.Description}}</td>
 			  </tr>
 		  </tbody>
 	  	  </table>
 		 </div>
-		  <table class="table-fill">
+		  <table class="table-main">
 		  <div class="table-title">
 		  	<h3>East Side - Platform 2</h3>
 		  </div>
 		  <thead>
 		  	<tr>
-		  	  <th class="text-left">Line</th>
+		  	  <th class="entry">Line</th>
 		  	  <th class="text-left">Departure</th>
 			  <th class="text-left">Direction</th>
 			  <th class="text-left">Destination</th>
 		  	</tr>
 		  </thead>
-		  <tbody class="table-hover">
+		  <tbody>
 			  <tr v-for="eP2 in eP2.slice(0,5)">	
-			  <td class="text-left">{{eP2.Route}}</td>
-			  <td class="text-left">{{eP2.DepartureText}}</td>
-			  <td class="text-left">{{eP2.RouteDirection}}</td>
-			  <td class="text-left">{{eP2.Description}}</td>
+			  <td class="entry">{{eP2.Route}}</td>
+			  <td class="entry">{{eP2.DepartureText}}</td>
+			  <td class="entry">{{eP2.RouteDirection}}</td>
+			  <td class="entry">{{eP2.Description}}</td>
 			  </tr>
 		  </tbody>
 	  	  </table>
-		  
-		  <table class="table-fill">
+		</div>
+		<div id="westDiv">
+		  <table class="table-main">
 		  <div class="table-title">
 		  	<h3>West Side - Platform 1</h3>
 		  </div>
 		  <thead>
 		  	<tr>
-		  	  <th class="text-left">Line</th>
-		  	  <th class="text-left">Departure</th>
-			  <th class="text-left">Direction</th>
+		  	  <th class="entry">Line</th>
+		  	  <th class="entry">Departure</th>
+			  <th class="entry">Direction</th>
 			  <th class="text-left">Destination</th>
 		  	</tr>
 		  </thead>
-		  <tbody class="table-hover">
+		  <tbody>
 			  <tr v-for="wP1 in wP1.slice(0,5)">	
-			  <td class="text-left">{{wP1.Route}}</td>
-			  <td class="text-left">{{wP1.DepartureText}}</td>
-			  <td class="text-left">{{wP1.RouteDirection}}</td>
-			  <td class="text-left">{{wP1.Description}}</td>
+			  <td class="entry">{{wP1.Route}}</td>
+			  <td class="entry">{{wP1.DepartureText}}</td>
+			  <td class="entry">{{wP1.RouteDirection}}</td>
+			  <td class="entry">{{wP1.Description}}</td>
 			  </tr>
 		  </tbody>
 	  	  </table>
 		  
-		  <table class="table-fill">
+		  <table class="table-main">
 		  <div class="table-title">
-		  	<h3>West Side - Platform 1</h3>
+		  	<h3>West Side - Platform 2</h3>
 		  </div>
 		  <thead>
 		  	<tr>
@@ -92,16 +97,16 @@
 			  <th class="text-left">Destination</th>
 		  	</tr>
 		  </thead>
-		  <tbody class="table-hover">
+		  <tbody>
 			  <tr v-for="wP2 in wP2.slice(0,5)">	
-			  <td class="text-left">{{wP2.Route}}</td>
-			  <td class="text-left">{{wP2.DepartureText}}</td>
-			  <td class="text-left">{{wP2.RouteDirection}}</td>
-			  <td class="text-left">{{wP2.Description}}</td>
+			  <td class="entry">{{wP2.Route}}</td>
+			  <td class="entry">{{wP2.DepartureText}}</td>
+			  <td class="entry">{{wP2.RouteDirection}}</td>
+			  <td class="entry">{{wP2.Description}}</td>
 			  </tr>
 		  </tbody>
 	  	  </table>
-
+		 </div>
 	  </div>
     <script src="vendors/axios.js"></script>
     <script src="vendors/vue.js"></script>

@@ -1,3 +1,5 @@
+//gets from metro transit API - information pulled from 5 digit stop code
+window.onload=function(){
 var baseURL = "https://svc.metrotransit.org";
 var vm = new Vue({
     el: "#app",
@@ -6,6 +8,8 @@ var vm = new Vue({
 		eP2: [],
 		wP1: [],
 		wP2: [],
+		eastSide: true,
+		westSide: true
     },
     methods: {
         getEP1: function() {
@@ -42,4 +46,20 @@ setTimeout(function() {
   location.reload();
 }, 270000);
 
+//filters for table display - hidden by applying class "hidden" to div
+//Variables - doc elements
+var eastButton = document.getElementById('east');
+var eastDivs = document.getElementById('eastDiv');
+var westButton = document.getElementById('west');
+var westDivs = document.getElementById('westDiv');
 
+//on-clicks for filters - hides either west or east side platforms
+eastButton.addEventListener('click', function() {
+        eastDivs.classList.toggle("hidden");
+		console.log("strongSide");
+	});
+westButton.addEventListener('click', function() {
+		westDivs.classList.toggle("hidden");
+		console.log("leftSide");		
+	});
+}
