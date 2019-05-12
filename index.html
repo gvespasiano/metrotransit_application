@@ -2,22 +2,110 @@
 
 <html>
   <head>
+	<meta charset="utf-8">
+
     <title>Metro Transit</title>
   </head>
 
   <body>
-	  <h2>Test Connection</h2>
-      <div id="app">
-		<h2>Platform 1</h2>
-        <div v-for="train in train.slice(0,5)">
-            <p>{{train.Route}}</p>
-		    <p>{{train.DepartureText}}</p>
-			<p>{{train.RouteDirection}}</p>
-			<p>{{train.Description}}</p>
-        </div>
-      </div>
+	 
+	  <div id="app">
+		  <div id="header">
+		   <h1>Train Transportaton from Target Field</h1>
+	      </div>
+		  <div class="table-title">
+		  	<h3>Gate E - Platform 1</h3>
+		  </div>
+		 <div id="East1">
+		  <table class="table-fill">
+		  <thead>
+		  	<tr>
+		  	  <th class="text-left">Line</th>
+		  	  <th class="text-left">Departure</th>
+			  <th class="text-left">Direction</th>
+			  <th class="text-left">Destination</th>
+		  	</tr>
+		  </thead>
+		  <tbody class="table-hover">
+			  <tr v-for="eP1 in eP1.slice(0,5)">	
+			  <td class="text-left">{{eP1.Route}}</td>
+			  <td class="text-left">{{eP1.DepartureText}}</td>
+			  <td class="text-left">{{eP1.RouteDirection}}</td>
+			  <td class="text-left">{{eP1.Description}}</td>
+			  </tr>
+		  </tbody>
+	  	  </table>
+		 </div>
+		  <table class="table-fill">
+		  <div class="table-title">
+		  	<h3>East Side - Platform 2</h3>
+		  </div>
+		  <thead>
+		  	<tr>
+		  	  <th class="text-left">Line</th>
+		  	  <th class="text-left">Departure</th>
+			  <th class="text-left">Direction</th>
+			  <th class="text-left">Destination</th>
+		  	</tr>
+		  </thead>
+		  <tbody class="table-hover">
+			  <tr v-for="eP2 in eP2.slice(0,5)">	
+			  <td class="text-left">{{eP2.Route}}</td>
+			  <td class="text-left">{{eP2.DepartureText}}</td>
+			  <td class="text-left">{{eP2.RouteDirection}}</td>
+			  <td class="text-left">{{eP2.Description}}</td>
+			  </tr>
+		  </tbody>
+	  	  </table>
+		  
+		  <table class="table-fill">
+		  <div class="table-title">
+		  	<h3>West Side - Platform 1</h3>
+		  </div>
+		  <thead>
+		  	<tr>
+		  	  <th class="text-left">Line</th>
+		  	  <th class="text-left">Departure</th>
+			  <th class="text-left">Direction</th>
+			  <th class="text-left">Destination</th>
+		  	</tr>
+		  </thead>
+		  <tbody class="table-hover">
+			  <tr v-for="wP1 in wP1.slice(0,5)">	
+			  <td class="text-left">{{wP1.Route}}</td>
+			  <td class="text-left">{{wP1.DepartureText}}</td>
+			  <td class="text-left">{{wP1.RouteDirection}}</td>
+			  <td class="text-left">{{wP1.Description}}</td>
+			  </tr>
+		  </tbody>
+	  	  </table>
+		  
+		  <table class="table-fill">
+		  <div class="table-title">
+		  	<h3>West Side - Platform 1</h3>
+		  </div>
+		  <thead>
+		  	<tr>
+		  	  <th class="text-left">Line</th>
+		  	  <th class="text-left">Departure</th>
+			  <th class="text-left">Direction</th>
+			  <th class="text-left">Destination</th>
+		  	</tr>
+		  </thead>
+		  <tbody class="table-hover">
+			  <tr v-for="wP2 in wP2.slice(0,5)">	
+			  <td class="text-left">{{wP2.Route}}</td>
+			  <td class="text-left">{{wP2.DepartureText}}</td>
+			  <td class="text-left">{{wP2.RouteDirection}}</td>
+			  <td class="text-left">{{wP2.Description}}</td>
+			  </tr>
+		  </tbody>
+	  	  </table>
+
+	  </div>
     <script src="vendors/axios.js"></script>
     <script src="vendors/vue.js"></script>
     <script src="js/script.js"></script>
   </body>
+  
 </html>
